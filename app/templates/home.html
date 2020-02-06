@@ -1,0 +1,13 @@
+{%  extends "layout.html"   %}
+
+{%  block content   %}
+{% if current_user.is_authenticated %}
+<h1 class="home_title"> Bem vindo, {{current_user.username[0]|upper}}{{ current_user.username[1:]}} !</h1>
+{%  else    %}
+
+<h1 class="home_title"> Bem vindo ao TokenCal!</h1>
+
+ <a id = "home_button" href="/register"><div class = "myButton">Se inscrever</div></a>
+
+{%  endif   %}
+{%  endblock    %}

@@ -1,0 +1,40 @@
+{%  extends "layout.html"   %}
+
+{%  block content   %}
+<div class="forms_block">  
+     
+    <form id ="register_form" action = ""  method = "POST" novalidate>
+
+        <div id="form_title"> Inscrição </div>
+        {{  form.hidden_tag()    }}
+        
+        <div class="login_container">
+        {{ form.username.label }}
+        {{  form.username(class='login_field', placeholder = "Usuário")    }}
+        {% for error in form.username.errors %}
+        <span style = "color:red;">{{error}}</span>
+        {%  endfor  %}  
+        </div>
+
+        <div class="login_container">
+        {{ form.password.label}}
+        {{  form.password(class='login_field', placeholder= "Senha")    }}
+        {% for error in form.password.errors %}
+        <span style = "color:red;">{{error}}</span>
+        {%  endfor  %}
+        </div>
+
+        <div class="login_container">
+        {{ form.password2.label}}
+        {{  form.password2(class='login_field', placeholder= "Senha")    }}
+        {% for error in form.password2.errors %}
+        <span style = "color:red;">{{error}}</span>
+        {%  endfor  %}
+        </div>
+        
+        {{  form.submit(class='loginButton')  }}
+
+    </form>
+    
+</div>
+{%  endblock    %}

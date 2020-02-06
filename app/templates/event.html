@@ -1,0 +1,71 @@
+{%  extends "layout.html"   %}
+
+{%  block content   %}
+
+<h1> Meus eventos:</h1>
+{%  if nextEvent|length == 0    %}
+<p> Nenhum evento marcado</p>
+
+{%  else    %}
+
+
+<div id="event_list">
+    {% for e in nextEvent %}
+
+
+    <div class="event_block" >
+        <div class="calendar_icon">
+        <div class = "calendar_icon_head"> </div>
+        <div class = "calendar_icon_content"> 
+            <p>{{moment(e.date_start).format('MMM')}}</p>
+            <p class="icon_day"> {{moment(e.date_start).format('D')}}</p>
+        </div>
+        </div>
+
+        <div class = "event_block_content" id = "{{ 'event_' + e.id|string}}" onclick="editorTabNext(this)">
+        <p class="event_block_title">{{e.title}}
+            <span class="event_block_initClock">{{moment(e.date_start).fromNow()}}</span>
+        </p>
+        <p class="event_block_description">{{e.description}}</p>
+    </div> 
+</div>
+    {%  endfor  %}
+
+</div>
+{%  endif   %}
+
+
+<h1> Eventos anteriores:</h1>
+{%  if pastEvent|length == 0    %}
+<p> Nenhum evento encontrado</p>
+
+{%  else    %}
+
+
+<div id="event_list">
+    {% for e in pastEvent %}
+
+    <div class="event_block" id="past_events" >
+        <div class="calendar_icon">
+        <div class = "calendar_icon_head"> </div>
+        <div class = "calendar_icon_content"> 
+            <p>{{moment(e.date_start).format('MMM')}}</p>
+            <p class="icon_day"> {{moment(e.date_start).format('D')}}</p>
+        </div>
+        </div>
+
+        <div class = "event_block_content" id = "{{ 'event_' + e.id|string}}" onclick="editorTabPast(this)">
+        <p class="event_block_title">{{e.title}}
+            <span class="event_block_initClock">{{moment(e.date_start).fromNow()}}</span>
+        </p>
+        <p class="event_block_description">{{e.description}}</p>
+    </div> 
+</div>
+    {%  endfor  %}
+
+</div>
+{%  endif   %}
+
+<a class = "event_button" id="add_button" href="/event/new"><i class="material-icons editor_icons">add</i></a>
+
+{%  endblock    %}

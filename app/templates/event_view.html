@@ -1,0 +1,63 @@
+{%  extends "layout.html"   %}
+
+{%  block content   %}
+
+<h1> {{event.title}}</h1>
+
+{%  if event.date_start > dateNow    %}
+<div class = "event_info_banner">
+    <p> Inicio: {{ moment(event.date_start).format('llll')}}</p>
+    <div id="separate_line"></div> 
+    <p> Fim: {{ moment(event.date_end).format('llll')}}</p>
+</div>
+
+<h3> Informações do evento: </h3>
+<div class = "event_info_descript">
+    {{event.description}}
+</div>
+<div id = "friend_block_event">
+<div id = "friend_list">  
+    {%  for f in friends%}
+    <div class="friend_block">
+        <div class="friend_block_avatar" id = "avatar_block_{{f.id%7}}">
+            {{f.username[0]|upper}}
+        </div>
+        <div class = "friend_block_text">
+            {{f.username[0]|upper}}{{f.username[1:]}}
+        </div>
+    </div>
+
+    {%  endfor  %}
+</div>
+    <div id="footer_buttons">
+        <div class = "fooButton sender" onclick="sendEvent()">Enviar<i class = "material-icons">play_circle_outline</i></div>
+        <div class = "fooButton close" onclick="hideFriends()">Fechar<i class = "material-icons">cancel</i> </div>
+    </div>
+</div>
+    <p id="organised_p"> Organizado por: {{user.username}}</p>
+{%  if current_user.id == user.id %}
+<div id = "editor_menu"> 
+    <a class = "event_button" id="editor_button" href="/edit/{{event.id}}"><i class="material-icons editor_icons">mode_edit</i></a>
+    <a class = "event_button" id="invite_button" onclick="showFriends()"><i class="material-icons editor_icons">person_add</i></a>
+    <a class = "event_button" id="cancel_button" href="/delete/{{event.id}}"><i class="material-icons editor_icons">delete_forever</i></a>
+</div>
+{%  endif   %}
+
+{%  else    %}
+
+<div class = "event_info_banner">
+    <p> Inicio :{{ event.date_start}}</p>
+    <div id="separate_line"></div> 
+    <p> Fim: {{ event.date_end}}</p>
+
+</div>
+
+<h3> Descrição: </h3>
+<div class = "event_info_descrpt">
+    {{event.description}}
+</div>
+
+<p> Organizado por: {{ user.username}}</p>
+
+{%  endif   %}
+{%  endblock    %}

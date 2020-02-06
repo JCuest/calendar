@@ -1,0 +1,56 @@
+{%  extends "layout.html"   %}
+
+{%  block content   %}
+
+<div id = "search_tool">
+    <form action="" method="POST">
+    {{  search.hidden_tag()    }}
+    {{  search.searchBar(class = "search_bar", placeholder = "Buscar um usuario")  }}
+    {{  search.searchButton(class = "search_button")  }}
+    </form>
+</div>
+
+{%  if requestFriend|length > 0   %}
+<h1> Convites: </h1>
+
+{%  for r in requestFriend    %}
+<div class="friend_request">
+   <div>
+    <h3> {{r.username[0]|upper}}{{r.username[1:]}}</h3>
+    {%  if commonFriends[r.id] > 0 %} 
+    <p> {{commonFriends|length}} Amigos em comum </p>
+    {%  else    %}
+    <p> Nenhum amigo em comum </p>
+    {%  endif   %}
+    </div>
+    <div class = "request_menu"> 
+        <a class = "event_button " id="request_acept" href="/acept/{{r.id}}"> <i class="material-icons editor_icons">person_add</i></a> 
+        <a class = "event_button " id="request_cancel" href="/cancel/{{r.id}}"> <i class="material-icons editor_icons">clear</i></a>
+    </div>
+</div>
+{%  endfor  %}
+{%  endif   %}
+
+
+{%  if friends|length > 0   %}
+<h1> Amigos: </h1>
+
+<div class = "friend_list">
+{%  for f in friends    %}
+<a href="/user/{{f.username}}">
+<div class="friend_block">
+    <div class="friend_block_avatar" id = "avatar_block_{{f.id%7}}">
+        {{f.username[0]|upper}}
+    </div>
+    <div class = "friend_block_text">
+        {{f.username[0]|upper}}{{f.username[1:]}}
+    </div>
+
+</div>
+</a>
+    {%  endfor  %}
+</div>
+{%  else    %}
+<h1> Voce esta sozinho :'(</h1>
+{%  endif   %}
+{%  endblock    %}

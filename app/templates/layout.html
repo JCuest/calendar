@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Token Calendar</title>
+    <meta name = "viewport" content = "width=device-width" user-scalable = "yes"> 
+    <link rel="stylesheet" href= "../static/css/main.css">
+    <script type = "text/javascript" src="../static/script/pageScript.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    {{  moment.include_jquery()   }}
+    {{  moment.include_moment()   }}
+    {{  moment.lang("pt-br")  }}
+
+</head>
+
+
+<body>
+
+{%  if  current_user.is_authenticated %}
+
+<div class= "header">
+    <div class="header_menu_icon" ><i class="material-icons " id="menu_icon" onclick="openMenu()">menu</i></div>
+    <div id="header_logo">
+    <img src='../static/images/calendar_icon.png' id="logo_img">
+    <p id="logo_text">iCal</p>    
+    </div>
+    <div id="header_scroll_menu">
+    <ul id = "header_menu">
+        <li><a href = '/home'>Home</a></li>
+        <li><a href = '/event'>Eventos</a></li>
+        <li><a href = '/friend'>Amigos</a></li>
+        <li><a href = '/logout'>Sair</a></li>
+    </ul> 
+    </div>
+    <a href="{{url_for('user', username = current_user.username) }}"> <div class = "myButton" id="profileButton">Perfil</div></a> 
+</div>
+
+{%  else    %}
+
+<div class= "header">
+    <div class="header_menu_icon" ><i class="material-icons" id="menu_icon" onclick="openMenu()">menu</i></div>
+    <div id="header_logo">
+        <img src='../static/images/calendar_icon.png' id="logo_img">
+        <p id="logo_text">iCal</p>    
+        </div>
+    <div id="header_scroll_menu">
+    <ul id = "header_menu">
+        <li><a href="/home">Home</a></li>
+        <li><a href="#">Ajuda</a></li>
+    </ul> 
+    </div>
+     <a href="/login"><div class = "myButton">Entrar</div></a>
+</div>
+
+{%  endif   %}
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul>
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+<div id="body_content">
+{%  block content %}{%  endblock    %}
+</div>
+
+</body>

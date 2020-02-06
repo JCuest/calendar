@@ -1,0 +1,897 @@
+/*                              GENERAL                         */
+body{
+    background-image: url("../images/wallpaper.jpg");
+
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    margin: 0;
+    font-size: 1.2em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    color: rgb(238, 238, 238);
+    align-items: center;
+    flex-direction: column;
+}
+
+h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+a{
+    color:white;
+    text-decoration: none;
+}
+#body_content{
+    padding: 2.5%;
+    padding-block-start: 0;
+    height: max-content;
+    box-sizing: border-box;
+    background-color: rgba(165, 161, 161, 0.678);
+    width: 85%;
+    min-height: 95vh;
+    border-color: transparent;
+
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+
+}
+
+/*                                          HEADER                                                     */
+
+.header{
+    box-sizing: border-box;
+    position: sticky;
+    top:0;
+    left: 0;
+    font-size: 1em;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(52, 150, 231);
+
+    z-index: 2;
+    width: 100%;
+    height: 3rem;
+    display: flex;
+
+}
+.header_menu_icon{
+    display: none;
+    
+}
+
+.header_menu_icon i {
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+
+#header_logo{
+    height: 100%;
+    width: 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#logo_img{
+    width: 30%;
+    height: 80%;
+    color: white;
+    margin-inline-end: 0.5rem;
+}
+
+#logo_text{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    font-size: 1.5rem;
+}
+
+#header_scroll_menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 50%;
+}
+#header_menu{
+    list-style: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+#header_menu li{
+    text-align: center;
+    color: white;
+    cursor: pointer;
+}
+
+#header_menu li a{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+.myButton{
+    width: 10rem;
+    height: 2.25rem;
+    display: flex;
+    border-radius: 2rem;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(3, 108, 194);
+    cursor: pointer;
+}
+
+.myButton:hover{
+    background-color: rgb(28, 120, 196);
+}
+
+
+.myButton.already_friends{
+    color: rgb(3, 108, 194);
+    background-color: transparent;
+    border: 2px solid rgb(3, 108, 194);
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+#inviteFriend_Button{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#organised_p{
+    color: rgb(90, 87, 87);
+    font-size: 1rem;
+}
+
+/*                                  LOGIN                                                           */
+
+
+
+.forms_block{
+    display: flex;
+    background-color: lightgray;
+    position: absolute;
+    justify-content: center;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    float: left;
+    left: 50%;
+    top: 50%;
+    width: 50%;
+    min-width: max-content;
+    border-radius: 10%;
+    height: max-content;
+}
+
+#login_form{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#register_form{
+    
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;    
+}
+
+#form_title{
+    text-align: center;
+    font-size: 3rem;
+    color: rgb(119, 117, 117);
+    margin-bottom: 10%;
+    margin-top: 7.5%;
+}
+
+.login_container{
+    margin-block-end: 10%;
+    box-sizing: border-box;
+}
+.login_field{
+    text-align: center;
+    margin-block-end: 2%;
+    width: 100%;
+    height: 3rem;
+    font-size: 1.5rem;
+    border: 2px solid transparent;
+
+    color:black;
+}
+label{
+    color: rgb(63, 63, 63);
+}
+.login_field:focus{
+    border: 2px solid rgb(52, 150, 231);
+}
+label{
+    text-align: left;
+}
+.loginButton{
+
+    text-align: center;
+    margin-bottom: 10%;
+    width: 100%;
+    border: 2px solid transparent;
+    height: 3rem;
+    font-size: 1.5rem;
+    color: white;
+    background-color: rgb(52, 150, 231);
+    cursor: pointer;
+}
+
+input[type = "submit"]:hover{
+    background-color:rgb(84, 157, 218);
+
+}
+
+#form_login_bottom{
+    color: rgb(63, 63, 63);
+}
+
+#form_login_bottom a{
+    text-decoration: none;
+    color: rgb(52, 150, 231);
+}
+
+
+.home_title{
+    position: absolute;
+    left: 15%;
+    top: 10%;
+}
+
+#home_button{
+    position: absolute;
+    -webkit-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+    top: 50%;
+    left: 15%;
+}
+#search_tool{
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
+    width: 100%;
+}
+.search_bar{
+    width: 50vw;
+    background-color: white;
+    height: 2rem;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    padding-inline-start: 1rem;
+    border-color: transparent;
+}
+.search_button{
+    box-sizing: border-box;
+    min-width: max-content;
+    color:white;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    width: 10%;
+    height: 2.5rem;
+    border-bottom-right-radius: 1rem;
+    border-top-right-radius: 1rem;
+    background-color: rgb(52, 150, 231);
+    border-color: transparent;
+}
+#friend_block_event{
+    position: absolute;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.966);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    float: left;
+    left: 50%;
+    top: 50%;
+    width: 60%;
+    height: 85vh;
+    padding: 5%;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    box-sizing: border-box;
+    border-radius: 10%;
+    display: none;
+
+
+}
+#friend_list{
+    overflow-y: scroll;
+    color: rgb(73, 69, 69);  
+    height: 400px;
+    width: 100%;
+}
+#friend_list div{
+    margin-block-end: 1rem; 
+}
+#footer_buttons{
+    position: absolute;
+    bottom: 2%;
+    right: 0%;
+    display: flex;
+    flex-direction: row-reverse;
+    height: 4rem;
+    width: 20rem;
+}
+
+.fooButton{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
+    width: 9rem;
+    margin-inline-end: 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+.fooButton i{
+    margin-inline-start: 0.5rem;
+}
+.fooButton.sender{
+    background-color: rgb(31, 189, 31);
+}
+
+.fooButton.close{
+    background-color: rgb(255, 23, 23);
+}
+#friend_list_event div{
+    margin-block-end: 1rem;
+}
+#separate_line{
+    align-self: center;
+    height: 2rem;
+    border: 1px solid rgba(63, 63, 63,0.31);
+    margin-inline-start: 1rem;
+    margin-inline-end: 1rem;
+}
+#editor_menu{
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    bottom: 5%;
+    right: 10%;
+}
+.event_button{
+
+    width: 4rem;
+    height: 4rem;
+    border-radius: 3rem;    
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    margin-inline-end: 1rem;
+}
+
+
+#editor_button{
+    background-color: rgba(251, 255, 4, 0.87);
+}
+#invite_button{
+    cursor: pointer;
+    background-color: rgba(255, 108, 4, 0.87);
+}
+#cancel_button{
+    background-color: rgba(255, 38, 38, 0.87);
+}
+
+#add_button{
+    position: fixed;
+    bottom: 5%;
+    right: 10%;
+    background-color: rgba(255, 108, 4, 0.87);
+
+}
+
+.material-icons.editor_icons{
+    color: white;
+    align-self: center;
+    justify-self: center;
+    font-size: 2.5rem;
+}
+#new_event_form{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;  
+}
+
+#event_dates{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.dates_label{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.dates_label label{
+    justify-self: center;
+}
+.date_field{
+    width: 95%;
+    height: 3rem;
+}
+
+.event_descrp{
+    box-sizing: border-box;
+    width: 100%;
+    height: 5rem;
+    margin-block-end: 2rem;
+}
+
+.event_block{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 90%;
+    background-color: steelblue;
+    padding: 2%;
+    border-color: transparent;
+    border-radius: 2rem;
+    cursor: pointer;
+    color: white;
+    margin-block-end: 1rem;
+    max-height: 10rem;
+
+
+}
+
+.event_block_content{
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    overflow-y: scroll;
+    padding: 1%;
+    padding-left: 2.5%;
+}
+.event_block_title{
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-size: 1.5rem;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.event_block_initClock{
+    font-size: 0.9rem;
+    color: rgb(63, 63, 63);
+}
+
+#event_list{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.event_block_content::-webkit-scrollbar-track{
+    border-radius: 10px;
+	background-color:transparent;
+}
+
+.event_block_content::-webkit-scrollbar{
+	width: 5px;
+	background-color: transparent;
+}
+
+.event_block_content::-webkit-scrollbar-thumb{
+	border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.178);;
+	background-color: rgba(85, 85, 85, 0.473);
+}
+
+.event_info_banner{
+    margin-block-start: 0;
+    margin-block-end: 3rem;
+    width: 100%;
+    color:rgb(63, 63, 63);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+
+.calendar_icon{
+    width: 18%;
+    min-width: 8rem;
+    height: 8rem;
+    background-color: rgba(119, 117, 117, 0.281);
+    align-self: center;
+}
+
+.calendar_icon_head{
+    background-color: rgba(253, 17, 17, 0.842);
+    width: 100%;
+    height: 1rem;
+    border-top-left-radius: .7rem;
+    border-top-right-radius: .7rem;
+}
+.calendar_icon_content{
+    text-align: center;
+    color:black;
+    width: 100%;
+    height: 7rem;
+    background-color: rgba(255, 255, 255, 0.87);
+    border-bottom-left-radius: .7rem;
+    border-bottom-right-radius: .7rem;
+}
+
+.calendar_icon_content p{
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.icon_day{
+    font-size: 4rem;
+}
+
+#past_events{
+    opacity: 65%;
+}
+
+.profile_banner{
+    background-color: rgba(204, 192, 192, 0.925);
+    float: left;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 15vw;
+    height: 100vh;
+    padding: 2%;
+    min-width: 15vh;
+    box-sizing: border-box;
+
+}
+
+.profile_photo{
+    width: 12vw;
+    height: 12vw;
+    min-width: 10vh;
+    min-height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    border: 4px solid rgba(172, 169, 169, 0.925);
+    color: white;
+    background-color: rgb(52, 150, 231);
+    border-radius: 12.5vh;
+}
+
+.user_profile{
+    float: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 60vw;
+    margin-block-start: 1rem;
+
+}
+
+.profile_title{
+    color: rgb(255, 255, 255);
+    font-size: 3rem;
+    font-weight: normal;
+    width: 40%;
+
+}
+
+
+.friend_request{
+    border-bottom: 1px solid gray;
+    margin-block-end: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#request_acept{
+    border: 3px solid blue;
+}
+
+#request_acept i{
+    color: blue;
+}
+
+#request_acept:hover {
+    background-color: blue;
+}
+#request_acept:hover i {
+    color: white;
+}
+
+#request_cancel{
+    border: 3px solid red;
+}
+
+#request_cancel i{
+    color: red;
+}
+#request_cancel:hover {
+    background-color: red;
+}
+#request_cancel:hover i {
+    color: white;
+}
+
+.request_menu{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+}
+.friend_list{
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    width: 100%;
+    column-gap: 5%;
+}
+.friend_block{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: fit-content;
+    border-radius: 3rem;
+}
+
+.friend_block:hover{
+    background-color: rgba(185, 182, 182, 0.24);
+}
+
+.friend_block_avatar{
+    display: flex;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 2.5rem;
+    background-color: violet;
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    margin-inline-end: 1rem;
+}
+
+#avatar_block_0{
+    background-color: darkorchid;
+}
+#avatar_block_1{
+    background-color: rgb(226, 72, 72) ;
+}
+#avatar_block_2{
+    background-color: rgb(233, 97, 43);
+}
+#avatar_block_3{
+    background-color: rgb(240, 222, 62);
+}
+#avatar_block_4{
+    background-color: rgb(77, 230, 171);
+}
+#avatar_block_5{
+    background-color: rgb(31, 101, 158);
+}
+#avatar_block_6{background-color: rgb(204, 44, 191);}
+
+.friend_block_text{
+    font-size: 1.5rem;
+}
+@media (max-width : 1050px){
+    #event_dates{
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media (max-width: 600px){
+    body{
+        font-size: 1.2em;
+    }
+    #body_content{
+        min-height: 100vh;
+    }
+    h1{
+        font-size: 1.75rem;
+    }
+    .myButton{
+        width: 50vw;
+        max-width: 10rem;
+    }
+    .header{
+        display: flex;
+        justify-content: space-between;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    .header_menu_icon{
+        display: block;
+    }
+    #header_scroll_menu{
+        display: none;
+        height: 93vh;
+        width: 40vw;
+        z-index: 5;
+        position: absolute;
+        left: 0;
+        top:3rem;
+        background-color: rgba(41, 40, 40, 0.98);
+        min-width: max-content;
+    }
+    #header_menu{
+        display: none;
+        flex-direction: column;
+        justify-content: start;
+        align-items: baseline;
+        align-content: center;
+        padding:1%;
+        
+    }
+
+    #header_menu li{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 98%;
+        height: 10%;
+        margin-block-end: 1rem;
+    }
+
+    #header_menu li:hover{
+        background-color: rgb(52, 150, 231);
+    }
+
+    #header_logo{
+        display: none;
+    }
+
+    /*                                      FORMS                                               */
+
+    .forms_block{
+        width: 80%;
+        font-size: 1.2rem;
+    }
+
+    #form_title{
+        font-size: 3rem;
+
+    }
+    #editor_menu{
+        flex-direction: column;
+        right: 0;
+        bottom: 0;
+    }
+
+    .event_button{
+        margin-inline-end: 0.5rem;
+        margin-block-end: 0.5rem;
+    }
+
+    #add_button{
+        right: 0;
+        bottom: 0;
+    }
+
+    .request_menu{
+        flex-direction: column;
+    }
+
+    .friend_list{
+        grid-template-columns: 100%;
+        column-gap: 0;
+        row-gap: 1rem;
+    }
+
+    .event_block{
+        min-height: 6.5rem;
+    }
+    .calendar_icon{
+        width: 30%;
+        height: 5.5rem;
+        max-width: 6rem;
+        min-width: 4rem;
+    }
+
+    .calendar_icon_content{
+        height: 4.5rem;
+        font-size: 1rem;
+    }
+
+    .icon_day{
+        font-size: 2.5rem;
+    }
+
+    .event_block_content{
+        font-size: 0.9rem;
+    }
+    .event_block_title{
+        font-size: 1.15rem;
+    }
+    .event_block_initClock{
+        font-size: 0.7rem;
+    }
+    .profile_banner{
+        background-color: transparent;
+        width: 100%;
+        height: 5rem;
+    }
+    .profile_photo{
+        font-size: 2.5rem;
+        height: 4rem;
+        width: 4rem;
+    }
+    .user_profile{
+        text-align: center;
+        width: 100%;
+        margin-block-start: 0;
+    }
+    .profile_title{
+        width: 40%;
+        font-size: 2.5rem;
+        margin-block-start: 1rem;
+        margin-block-end: 1rem;
+    }
+
+    #inviteFriend_Button{
+        font-size: 1rem;
+        width: 25vw;
+    }
+
+    #friend_block_event{
+        position: fixed;
+        width: 90%;
+        height: 90%;
+        top:55%;
+    }
+
+    #footer_buttons{
+        width: 90%;
+        padding-left: 5%;
+        padding-right: 5%;
+
+    }
+
+    .fooButton{
+        margin-inline-end: 0;
+        margin-inline-start: 2.5%;
+    }
+
+    .myButton.already_friends{
+        width: 25vw;
+        min-width: max-content;
+    }
+
+    .search_button{
+        font-size: 0.8rem;
+    }
+}
+
+
+
+
+@media (max-width: 350px){
+    .user_profile{
+        flex-direction: column;
+        align-content: center;
+    }
+
+    .profile_title{
+        width: 100%;
+    }
+}

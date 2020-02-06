@@ -1,0 +1,29 @@
+{%  extends "layout.html"   %}
+
+{%  block content   %}
+<div class="profile_banner">
+    <div class="profile_photo">
+        {{user.username[0]|upper}}
+    </div>
+</div>
+
+<div class="user_profile">
+<h1 class="profile_title"> {{user.username[0]|upper }}{{user.username[1:] }}</h1>
+
+{%  if current_user.id != user.id   %}
+
+{%  if friend == True %}
+<div class = "myButton already_friends" > <i class = "material-icons">group</i> Amigos</div>
+
+{%  else    %}
+{%  if invSend == 1 %}
+<div class = "myButton already_friends" > <i class = "material-icons">done</i> Enviado</div>
+{%  elif invSend == 2   %}
+<div class = "myButton already_friends" > <i class = "material-icons">perm_identity</i> Recebido</div>
+{%  else    %}
+ <a href="/invite/{{user.id}}"> <div class = "myButton" id="inviteFriend_Button"><i class="material-icons">person_add</i> Adicionar</div></a> 
+{%  endif   %}
+{%  endif   %}
+{%  endif   %}
+</div>
+{%  endblock    %}

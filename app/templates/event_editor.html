@@ -1,0 +1,46 @@
+{%  extends "layout.html"   %}
+
+{%  block content   %}
+
+
+<div class = "forms_block">
+    <form id="new_event_form" action = ""  method = "POST" novalidate>
+        
+        <div id="form_title"> Novo Evento </div>
+        
+        {{  form.hidden_tag()    }}
+
+        <div class="login_container">
+            {{  form.title(class='login_field')    }}
+            {% for error in form.title.errors %}
+            <span style = "color:red;">{{error}}</span>
+            {%  endfor  %}  
+        </div>
+
+        <div class="login_container">
+            <div id = "event_dates">
+                <div class = "dates_label">
+                    {{  form.date_start.label}}
+                    {{  form.date_start(class = 'date_field')}}
+                </div>
+                <div class = "dates_label">
+                    {{  form.date_end.label}}
+                    {{  form.date_end( class = 'date_field')}} 
+                </div>
+        </div>
+
+            {% for error in form.date_end.errors %}
+            <span style = "color:red;"><p>{{error}}</p></span>
+            {%  endfor  %}  
+        </div>
+        
+        
+        {{  form.description(class = 'event_descrp')    }}
+
+        {{  form.submit(class='loginButton')  }}
+        
+    </form>
+
+</div>
+
+{%  endblock    %}
