@@ -148,7 +148,7 @@ def event_editor(event_id):
         form.date_end.data = event.date_end
         form.description.data = event.description    
 
-    if form.validate_on_submit() and form.validate_date():
+    if form.validate_on_submit():
         event.title = form.title.data  
         event.date_start = form.date_start.data  
         event.date_end = form.date_end.data  

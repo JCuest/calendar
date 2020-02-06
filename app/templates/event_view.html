@@ -4,7 +4,7 @@
 
 <h1> {{event.title}}</h1>
 
-{%  if event.date_start > dateNow    %}
+{%  if event.date_end >  dateNow    %}
 <div class = "event_info_banner">
     <p> Inicio: {{ moment(event.date_start).format('llll')}}</p>
     <div id="separate_line"></div> 
@@ -56,7 +56,6 @@
 <div class = "event_info_descrpt">
     {{event.description}}
 </div>
-
 <p> Organizado por: {{ user.username}}</p>
 
 {%  endif   %}
